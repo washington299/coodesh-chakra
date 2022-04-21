@@ -7,18 +7,22 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint src",
-    "test": "jest",
-		"test:watch": "yarn test --watch",
+    "test": "jest --passWithNoTests",
+    "test:watch": "yarn test --watch",
     "postinstall": "husky install",
     "prepare": "husky install"
   },
   "lint-staged": {
     "src/**/*": [
       "yarn lint --fix",
-			"yarn test --bail"
+      "yarn test --bail"
     ]
   },
   "dependencies": {
+    "@chakra-ui/react": "^1.8.8",
+    "@emotion/react": "11",
+    "@emotion/styled": "11",
+    "framer-motion": "6",
     "next": "11.0.1",
     "react": "17.0.2",
     "react-dom": "17.0.2"
