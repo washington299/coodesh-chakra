@@ -4,12 +4,19 @@ import { Link } from "@chakra-ui/react";
 export type MenuItemProps = {
 	text: string;
 	href: string;
+	color?: string;
+	hoverColor?: string;
 };
 
-export const MenuItem = ({ text, href }: MenuItemProps) => {
+export const MenuItem = ({
+	text,
+	href,
+	color = "gray.400",
+	hoverColor = "gray.500",
+}: MenuItemProps) => {
 	return (
 		<NextLink href={href}>
-			<Link color="gray.400" fontWeight={500} px={6} _hover={{ color: "gray.500" }}>
+			<Link color={color} fontWeight={500} px={6} _hover={{ color: hoverColor }}>
 				{text}
 			</Link>
 		</NextLink>
