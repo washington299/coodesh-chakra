@@ -4,6 +4,8 @@ import { global } from "styles/global";
 import { colors } from "styles/colors";
 import { Container } from "styles/container";
 import { Link } from "styles/link";
+import { Badge } from "styles/badge";
+import { Button } from "styles/button";
 
 export const theme = extendTheme({
 	colors,
@@ -13,5 +15,7 @@ export const theme = extendTheme({
 	components: {
 		Container,
 		Link,
+		Badge,
+		Button,
 	},
 });

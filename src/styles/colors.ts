@@ -5,4 +5,7 @@ export const colors = {
 	dark: {
 		100: "#77838f",
 	},
+	warning: {
+		100: "#FFC107",
+	},
 };
