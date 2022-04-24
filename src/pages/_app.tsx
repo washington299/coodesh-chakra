@@ -3,6 +3,8 @@ import { ChakraProvider } from "@chakra-ui/react";
 
 import { theme } from "styles/theme";
 
+import "@fontsource/poppins";
+
 const App = ({ Component, pageProps }: AppProps) => {
 	return (
 		<ChakraProvider theme={theme}>

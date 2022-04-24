@@ -1,22 +1,46 @@
-import { Box, Container, Flex, Button, Spacer, Show } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { useRouter } from "next/router";
+import { Box, Container, Flex, Button, Spacer, Link } from "@chakra-ui/react";
+import { MdPerson } from "react-icons/md";
 
-import { MenuItem } from "components/MenuItem";
+import { mock } from "./mock";
 
 export const NavBar = () => {
+	const { pathname } = useRouter();
+
 	return (
 		<Box bg="main.100">
-			<Container overflowX="auto">
-				<Flex alignItems="center">
-					<Box as="nav" whiteSpace="nowrap" py={8}>
-						<MenuItem text="Dashboard" href="/" color="white" hoverColor="whiteAlpha.800" />
-						<MenuItem text="Candidaturas" href="/" color="white" hoverColor="whiteAlpha.800" />
-						<MenuItem text="Desafio Tech" href="/" color="white" hoverColor="whiteAlpha.800" />
-						<MenuItem text="Meu Perfil" href="/" color="white" hoverColor="whiteAlpha.800" />
+			<Container>
+				<Flex direction={{ base: "column", lg: "row" }} alignItems={{ lg: "center" }}>
+					<Box as="nav" whiteSpace="nowrap" py={6} overflowX="auto">
+						{mock.navbarList.map(({ text, href }) => {
+							const isActive = pathname === href;
+
+							return (
+								<NextLink key={text} href={href}>
+									{isActive ? (
+										<Link color="white" px={6}>
+											{text}
+										</Link>
+									) : (
+										<Link variant="secondary" px={6}>
+											{text}
+										</Link>
+									)}
+								</NextLink>
+							);
+						})}
 					</Box>
 					<Spacer />
-					<Show above="lg">
-						<Button>Completar perfil</Button>
-					</Show>
+					<Button
+						leftIcon={<MdPerson size={18} />}
+						w={{ base: "100%", lg: "auto" }}
+						my={{ base: 2, lg: 0 }}
+						fontWeight={500}
+						fontSize={14}
+					>
+						Completar perfil
+					</Button>
 				</Flex>
 			</Container>
 		</Box>

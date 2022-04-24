@@ -1,7 +1,8 @@
-import { Container, Box, Flex, VStack } from "@chakra-ui/react";
+import NextLink from "next/link";
+import { Container, Box, Flex, VStack, Link } from "@chakra-ui/react";
 import { MdClose } from "react-icons/md";
 
-import { MenuItem } from "components/MenuItem";
+import { mock } from "components/Header/mock";
 
 type MenuMobileProps = {
 	toggleMenuMobile: () => void;
@@ -16,10 +17,13 @@ export const MenuMobile = ({ toggleMenuMobile }: MenuMobileProps) => {
 				</Flex>
 
 				<VStack spacing={6} alignItems="flex-start">
-					<MenuItem text="Contrate DEVs" href="/" />
-					<MenuItem text="Divulgar vagas" href="/" />
-					<MenuItem text="Vagas" href="/" />
-					<MenuItem text="Dicas" href="/" />
+					{mock.menuList.map(({ text, href }) => (
+						<NextLink key={text} href={href}>
+							<Link px={6} variant="primary" onClick={toggleMenuMobile}>
+								{text}
+							</Link>
+						</NextLink>
+					))}
 				</VStack>
 			</Container>
 		</Box>

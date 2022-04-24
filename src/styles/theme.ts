@@ -1,16 +1,17 @@
 import { extendTheme } from "@chakra-ui/react";
 
+import { global } from "styles/global";
+import { colors } from "styles/colors";
+import { Container } from "styles/container";
+import { Link } from "styles/link";
+
 export const theme = extendTheme({
-	colors: {
-		main: {
-			100: "#377DFF",
-		},
+	colors,
+	styles: {
+		global,
 	},
 	components: {
-		Container: {
-			baseStyle: {
-				maxWidth: "1150px",
-			},
-		},
+		Container,
+		Link,
 	},
 });

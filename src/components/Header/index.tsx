@@ -1,5 +1,6 @@
 import { useState } from "react";
 import Image from "next/image";
+import NextLink from "next/link";
 import {
 	Container,
 	Flex,
@@ -9,15 +10,15 @@ import {
 	MenuList,
 	MenuItem,
 	MenuButton,
-	Button,
 	Avatar,
 	Show,
-	Fade,
+	Link,
 } from "@chakra-ui/react";
-import { MdNotifications, MdKeyboardArrowRight, MdMenu } from "react-icons/md";
+import { MdNotifications, MdMenu, MdKeyboardArrowRight } from "react-icons/md";
 
-import { MenuItem as MenuItemLink } from "components/MenuItem";
 import { MenuMobile } from "components/MenuMobile";
+
+import { mock } from "./mock";
 
 export const Header = () => {
 	const [menuMobileOpen, setMenuMobileOpen] = useState(false);
@@ -38,39 +39,48 @@ export const Header = () => {
 
 				<Show below="lg">
 					<MdMenu size={25} cursor="pointer" onClick={toggleMenuMobile} />
-					{menuMobileOpen && (
-						<Fade in={menuMobileOpen}>
-							<MenuMobile toggleMenuMobile={toggleMenuMobile} />
-						</Fade>
-					)}
+					{menuMobileOpen && <MenuMobile toggleMenuMobile={toggleMenuMobile} />}
 				</Show>
 
 				<Show above="lg">
 					<Box as="nav">
-						<MenuItemLink text="Contrate DEVs" href="/" />
-						<MenuItemLink text="Divulgar vagas" href="/" />
-						<MenuItemLink text="Vagas" href="/" />
-						<MenuItemLink text="Dicas" href="/" />
+						{mock.menuList.map(({ text, href }) => (
+							<NextLink key={text} href={href}>
+								<Link px={6} variant="primary">
+									{text}
+								</Link>
+							</NextLink>
+						))}
 					</Box>
 
 					<Flex alignItems="center" ml={14}>
 						<MdNotifications color="#5F6368" size={25} cursor="pointer" />
 						<Menu>
 							<MenuButton
-								as={Button}
-								rightIcon={<MdKeyboardArrowRight />}
+								as={Box}
 								textColor="gray.500"
+								px={3}
+								py={2}
+								fontSize={14}
 								ml={4}
 								bg="#EAF2FF"
 								borderRadius={20}
+								cursor="pointer"
 							>
-								Pedro
-								<Avatar size="xs" name="Marina" src="https://bit.ly/ryan-florence" ml={2} />
+								<Flex alignItems="center">
+									<span>Pedro</span>
+									<Avatar size="xs" name="Marina" src="https://bit.ly/ryan-florence" ml={2} />
+									<MdKeyboardArrowRight size={15} />
+								</Flex>
 							</MenuButton>
 							<MenuList>
-								<MenuItem>Meu Painel</MenuItem>
-								<MenuItem>Editar Perfil</MenuItem>
-								<MenuItem>Log out</MenuItem>
+								{mock.dropdownList.map(({ text, href }) => (
+									<MenuItem key={text}>
+										<NextLink key={text} href={href}>
+											<a>{text}</a>
+										</NextLink>
+									</MenuItem>
+								))}
 							</MenuList>
 						</Menu>
 					</Flex>
