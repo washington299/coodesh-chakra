@@ -6,6 +6,7 @@ import { Container } from "styles/container";
 import { Link } from "styles/link";
 import { Badge } from "styles/badge";
 import { Button } from "styles/button";
+import { Heading } from "styles/heading";
 
 export const theme = extendTheme({
 	colors,
@@ -17,5 +18,6 @@ export const theme = extendTheme({
 		Link,
 		Badge,
 		Button,
+		Heading,
 	},
 });
