@@ -1,5 +1,10 @@
 export const Button = {
 	variants: {
+		primary: {
+			backgroundColor: "main.200",
+			color: "white",
+			fontWeight: 300,
+		},
 		warning: {
 			backgroundColor: "warning.100",
 			color: "black",

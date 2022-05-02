@@ -1,6 +1,7 @@
 export const colors = {
 	main: {
 		100: "#1267fc",
+		200: "#377DFF",
 	},
 	ice: {
 		100: "#EBF2FF",
