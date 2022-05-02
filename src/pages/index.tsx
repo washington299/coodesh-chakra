@@ -4,6 +4,7 @@ import { Banner } from "components/Banner";
 import { MainCards } from "components/MainCards";
 import { Candidacies } from "components/Candidacies";
 import { RecommendedJobs } from "components/RecommendedJobs";
+import { Opportunities } from "components/Opportunities";
 
 const Home = () => {
 	return (
@@ -14,6 +15,7 @@ const Home = () => {
 			<MainCards />
 			<Candidacies />
 			<RecommendedJobs />
+			<Opportunities />
 		</>
 	);
 };
