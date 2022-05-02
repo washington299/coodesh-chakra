@@ -8,7 +8,7 @@ export const MainCards = () => {
 	return (
 		<Container>
 			<Flex>
-				<SimpleGrid w="full" columns={{ base: 1, md: 2, lg: 3 }} gap={7}>
+				<SimpleGrid w="full" columns={{ base: 1, md: 2, xl: 3 }} gap={7}>
 					{mock.map(({ iconPath, alt, name, isAvailable }) => (
 						<MainCard
 							key={name}
