@@ -3,6 +3,7 @@ import { NavBar } from "components/NavBar";
 import { Banner } from "components/Banner";
 import { MainCards } from "components/MainCards";
 import { Candidacies } from "components/Candidacies";
+import { RecommendedJobs } from "components/RecommendedJobs";
 
 const Home = () => {
 	return (
@@ -12,6 +13,7 @@ const Home = () => {
 			<Banner />
 			<MainCards />
 			<Candidacies />
+			<RecommendedJobs />
 		</>
 	);
 };
