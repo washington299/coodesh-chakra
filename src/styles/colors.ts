@@ -11,4 +11,7 @@ export const colors = {
 	warning: {
 		100: "#FFC107",
 	},
+	light_green: {
+		100: "#00C9A7",
+	},
 };
