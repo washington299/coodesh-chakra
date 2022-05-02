@@ -3,20 +3,7 @@ import { Container, HStack, Box, Heading, SimpleGrid } from "@chakra-ui/react";
 
 import { CandidaciesCard } from "components/CandidaciesCard";
 
-const mock = [
-	{
-		imgSrc: "/assets/images/grupo_m_contigo.png",
-		title: "Desenvolvedor(a) Fullstack Angular",
-		company: "Grupo M Cantigo",
-		type: "sorting",
-	},
-	{
-		imgSrc: "/assets/images/nata_house.png",
-		title: "Desenvolvedor(a) Front-end ReactJs",
-		company: "Sólides",
-		type: "challenge",
-	},
-];
+import { mock } from "./mock";
 
 export const Candidacies = () => {
 	return (
