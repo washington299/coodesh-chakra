@@ -14,9 +14,7 @@ export const Banner = () => {
 				bg="main.100"
 			>
 				<Box>
-					<Badge variant="warning" borderRadius="md">
-						Pendente
-					</Badge>
+					<Badge variant="warning">Pendente</Badge>
 					<Heading color="white" fontWeight={600} mb={4}>
 						Desafio Tech!
 					</Heading>
