@@ -5,6 +5,17 @@ export const Button = {
 			color: "white",
 			fontWeight: 300,
 		},
+		primary_as_link: {
+			backgroundColor: "transparent",
+			color: "main.200",
+			border: "none",
+			_hover: {
+				textDecoration: "underline",
+			},
+			_focus: {
+				boxShadow: "none",
+			},
+		},
 		warning: {
 			backgroundColor: "warning.100",
 			color: "black",
