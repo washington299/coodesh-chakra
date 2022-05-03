@@ -6,6 +6,7 @@ import { Candidacies } from "components/Candidacies";
 import { RecommendedJobs } from "components/RecommendedJobs";
 import { Opportunities } from "components/Opportunities";
 import { Faq } from "components/Faq";
+import { Footer } from "components/Footer";
 
 const Home = () => {
 	return (
@@ -18,6 +19,7 @@ const Home = () => {
 			<RecommendedJobs />
 			<Opportunities />
 			<Faq />
+			<Footer />
 		</>
 	);
 };
