@@ -1,12 +1,12 @@
 import { extendTheme } from "@chakra-ui/react";
 
-import { global } from "styles/global";
-import { colors } from "styles/colors";
-import { Container } from "styles/container";
-import { Link } from "styles/link";
-import { Badge } from "styles/badge";
-import { Button } from "styles/button";
-import { Heading } from "styles/heading";
+import { global } from "./global";
+import { colors } from "./colors";
+import { Container } from "./container";
+import { Link } from "./link";
+import { Badge } from "./badge";
+import { Button } from "./button";
+import { Heading } from "./heading";
 
 export const theme = extendTheme({
 	colors,
